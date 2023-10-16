@@ -8,25 +8,25 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import dto.YemeklerDto;
-import service.YemeklerService;
+import dto.mealListDto;
+import service.mealListService;
 
 @RestController
-@RequestMapping("/yemekler")
-public class YemeklerController {
+@RequestMapping("/meals")
+public class mealListController {
 	@Autowired
-	YemeklerService yemekservice;
+	mealListService mealservice;
 	
 	@PostMapping("/add")
-	public ResponseEntity<YemeklerDto> addMeal(@RequestBody YemeklerDto yemek){
-		YemeklerDto result=yemekservice.addMeal(yemek);
+	public ResponseEntity<mealListDto> addMeal(@RequestBody mealListDto meal){
+		mealListDto result=mealservice.addMeal(meal);
 		return ResponseEntity.ok(result);
 		
 	}
 	
 	@GetMapping("/list")
-	public ResponseEntity<List<YemeklerDto>> listMeals(){
-		List<YemeklerDto> result=yemekservice.listMeals();
+	public ResponseEntity<List<mealListDto>> listMeals(){
+		List<mealListDto> result=mealservice.listMeals();
 		return ResponseEntity.ok(result);
 		
 	}

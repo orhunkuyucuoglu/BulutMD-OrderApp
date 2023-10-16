@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class YemeklerDto {
-	private String yemek_adi;
-	private double fiyat;
+public class mealListDto {
+	private String meal_name;
+	private double price;
 }

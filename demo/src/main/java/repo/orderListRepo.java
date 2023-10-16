@@ -3,12 +3,12 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import entity.SiparişListesi;
+import entity.orderList;
 
 @Repository
-public interface SiparişListesiRepo extends JpaRepository<SiparişListesi,Long> {
+public interface orderListRepo extends JpaRepository<orderList,Long> {
 	
-	Optional<SiparişListesi> findByName(String müşteri_adi);
+	Optional<orderList> findByName(String customer_name);
 
 	
 	
