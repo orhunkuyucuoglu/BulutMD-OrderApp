@@ -9,9 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dto.orderListDto;
-import dto.mealListDto;
 import entity.orderList;
-import entity.mealList;
 import repo.orderListRepo;
 
 
@@ -24,7 +22,7 @@ public abstract class orderListServiceImpl implements orderListService {
 	
 	
 	@Override
-	public orderListDto getOrder(String müşteri_adi) {
+	public orderListDto getOrder(String customer_name) {
 		Optional<orderList> order=cartRepo.findByName(customer_name);
 	
 		if (order.isPresent()){
@@ -41,7 +39,7 @@ public abstract class orderListServiceImpl implements orderListService {
 	}
 	@Override
 	public orderListDto createOrder(orderListDto orderdto) {
-		mealList meal=modelMapper.map(orderdto,mealList.class);
-		return modelMapper.map(cartRepo.save(meal), mealListDto.class);
+		orderList order=modelMapper.map(orderdto,orderList.class);
+		return modelMapper.map(cartRepo.save(order), orderListDto.class);
 	}
 }
