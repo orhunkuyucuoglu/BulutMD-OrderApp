@@ -27,5 +27,4 @@ public class orderList {
 	@JoinColumn(name = "meal_id")
 	private mealList meal;
 
-	
 }

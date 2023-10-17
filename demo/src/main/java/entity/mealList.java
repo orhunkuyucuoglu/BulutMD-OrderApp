@@ -24,6 +24,4 @@ public class mealList {
 	@Column(name="price")
 	private double price;
 	
-	
-
 }
