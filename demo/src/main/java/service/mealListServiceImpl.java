@@ -26,7 +26,7 @@ public abstract class mealListServiceImpl implements mealListService {
 	@Override
 	public List<mealListDto> listMeals()  {
 		List<mealList> meals=mealRepo.findAll();
-		List<mealListDto> dtos=mealList.stream().map(meal -> modelMapper.map(meal, mealListDto.class)).collect(Collectors.toList());
+		List<mealListDto> dtos=meals.stream().map(meal -> modelMapper.map(meal, mealListDto.class)).collect(Collectors.toList());
 		return dtos;
 
 }
