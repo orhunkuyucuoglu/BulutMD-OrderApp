@@ -18,7 +18,7 @@ public class orderListController {
 	@Autowired 
 	orderListService orderService;
 	
-	@GetMapping("/get/{müşteri_adi}")
+	@GetMapping("/get/{customer_name}")
 	public ResponseEntity<orderListDto> getOrder(@PathVariable("customer_name") String customer_name){
 		orderListDto order=orderService.getOrder(customer_name);
 		return ResponseEntity.ok(order);
